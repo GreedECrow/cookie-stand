@@ -1,5 +1,9 @@
-"use strict";
+"use strict"
 console.log("salmon cookies");
+
+function randomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 const container = document.getElementById("container");
 
@@ -15,7 +19,6 @@ const seattle = {
     customersEachHour: [],
     cookiesEachHour: [],
     totalDailyCookies: 0,
-
     calcCustomersEachHour: function () {
         for (let i = 0; i < hours.length; i++) {
             this.customersEachHour.push(randomNum(this.minCustPerHour, this.maxCustPerHour));
@@ -49,16 +52,16 @@ const seattle = {
             ul.appendChild(li);
         }
 
+        const li = document.createElement("li");
+        li.textContent = `Total Cookies: ${this.totalDailyCookies}`;
+        ul.appendChild(li);
     },
 };
-
-seattle.render();
 
 // console.log(seattle.customersEachHour.length);
 // console.log(seattle.cookiesEachHour.length);
 
-function randomNum(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
 
+
+seattle.render();
 
