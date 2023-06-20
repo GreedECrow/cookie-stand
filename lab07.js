@@ -58,6 +58,7 @@ CookieStand.prototype.render = function () {
 
 }
 
+
 const seattle = new CookieStand("Seattle", 23, 65, 6.3);
 const tokyo = new CookieStand("Tokyo", 3, 24, 1.2);
 const dubai = new CookieStand("Dubai", 11, 38, 3.7);
