@@ -1,6 +1,14 @@
 "use strict"
 console.log("lab07");
 
+const cookieStandForm = document.getElementById("addCookieStandForm");
+const storeName = document.getElementById("storeLocationInput");
+const minCustPerHour = document.getElementById("minCustPerHourInput");
+const maxCustPerHour = document.getElementById("maxCustPerHourInput");
+const avgCookiesPerHour = document.getElementById("avgCookiesPerHourInput");
+
+const allStores = [];
+
 const hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
 
 function CookieStand(storeName, minCustPerHour, maxCustPerHour, avgCookiesPerHour) {
@@ -68,3 +76,27 @@ const Lima = new CookieStand("Lima", 2, 16, 4.6);
 function randomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+cookieStandForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const storeName = event.target.storeName.value;
+    const minCustPerHour = event.target.minCustPerHour.value;
+    const maxCustPerHour = event.target.maxCustPerHour.value;
+    const avgCookiesPerHour = event.target.avgCookiesPerHour.value;
+
+    const newStore = new CookieStand(storeName, minCustPerHour, maxCustPerHour, avgCookiesPerHour);
+    console.log(newStore);
+    console.log(allStores);
+
+    renderAllStores();
+    cookieStandForm.reset();
+});
+
+function renderAllStores() {
+    for (let i = 0; i < allStores.length; i++) {
+        allstores[i].render();
+    }
+}
+
+renderAllStores();

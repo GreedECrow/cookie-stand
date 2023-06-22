@@ -13,3 +13,34 @@ th,
 td {
   padding: 0.5rem;
 }
+
+input {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+form {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+fieldset,
+legend {
+  margin-bottom: 1rem;
+}
+
+fieldset input:last-of-type {
+  margin-bottom: 0;
+}
+
+
+.inline-input {
+  display: inline;
+}
+
+button[type="submit"] {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
